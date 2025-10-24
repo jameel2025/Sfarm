@@ -18,36 +18,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Check project structure
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+      
+    - name: Build APK
       run: |
-        echo "Project contents:"
-        ls -la
-        echo "Gradle contents:"
-        ls -la gradle/ || echo "No gradle folder"
-        echo "App contents:"
-        ls -la app/ || echo "No app folder"
-        
-    - name: Generate Gradle Wrapper (if missing)
-      run: |
-        if [ ! -f "./gradlew" ]; then
-          echo "gradlew missing - generating wrapper"
-          gradle wrapper
-        else
-          echo "gradlew exists - making executable"
-          chmod +x ./gradlew
-        fi
-        
-    - name: Build with Gradle
-      run: |
-        if [ -f "./gradlew" ]; then
-          ./gradlew clean assembleDebug
-        else
-          gradle clean assembleDebug
-        fi
+        ./gradlew clean
+        ./gradlew assembleDebug
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: android-apk
+        name: my-app-debug
         path: app/build/outputs/apk/debug/
-        retention-days: 30
