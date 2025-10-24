@@ -1,0 +1,36 @@
+<resources>
+    <string-array name="equipment_status">
+        <item>نشط</item>
+        <item>تحت الصيانة</item>
+        <item>معطل</item>
+        <item>متوقف</item>
+    </string-array>
+
+    <string-array name="employee_positions">
+        <item>مدير مزرعة</item>
+        <item>مهندس زراعي</item>
+        <item>عامل</item>
+        <item>سائق</item>
+        <item>محاسب</item>
+        <item>مراقب</item>
+    </string-array>
+
+    <string-array name="equipment_types">
+        <item>آلات</item>
+        <item>ري</item>
+        <item>حصاد</item>
+        <item>نقل</item>
+        <item>معدات مساعدة</item>
+    </string-array>
+
+    <string-array name="crop_types">
+        <item>مانجو</item>
+        <item>برتقال</item>
+        <item>ليمون</item>
+        <item>تفاح</item>
+        <item>موز</item>
+        <item>عنب</item>
+        <item>زيتون</item>
+        <item>تمور</item>
+    </string-array>
+</resources>
